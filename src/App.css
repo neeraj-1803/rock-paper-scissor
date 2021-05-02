@@ -1,38 +1,264 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: 'Oswald', sans-serif;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  width: 100vw;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App{
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  border: 2px solid gray;
+  border-radius: 8px;
+  margin: 20px auto;
+}
+
+.header .score{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px transparent;
+  padding: 10px;
+  width: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.score h4{
+  font-size: 12px;
+  font-weight: 300;
+  color: rgb(39, 31, 31);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.score h2{
+  font-size: 40px;
+  color: rgb(39, 31, 31);
+}
+
+.footer{
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+}
+
+.footer button{
+  margin-right: 100px;
+  float: right;
+  height: 40px;
+  padding: 0px 30px;
+  background: transparent;
+  color: whitesmoke;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Oswald', sans-serif;
+}
+
+.game-page{
+  margin-left: 25%;
+  width: 50%;
+  position: absolute;
+  top: 180px;
+  bottom: 70px;
+  background-image: url('./images/bg-triangle.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 50% 50%;
+  background-position: center;
+  /* text-align:center; */
+}
+
+.game-page div, .user-sel div, .computer-sel div{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+}
+
+.rock{
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10%;
+  margin-left: 35%;
+  border: 20px solid #ca3433;
+}
+
+.paper{
+  cursor: pointer;
+  border: 20px solid royalblue;
+  margin-left: -10%;
+}
+
+.scissor{
+  cursor: pointer;
+  position: absolute;
+  border: 20px solid #fcd12a;
+  top: 0;
+  margin-left: 80%;
+}
+
+.rock-game{
+  cursor: pointer;
+  margin-left: -10%;
+  border: 20px solid #ca3433;
+}
+
+.paper-game{
+  cursor: pointer;
+  border: 20px solid royalblue;
+  margin-left: -10%;
+}
+
+.scissor-game{
+  cursor: pointer;
+  border: 20px solid #fcd12a;
+  margin-left: -10%;
+}
+
+.paper-comp-game{
+  cursor: pointer;
+  border: 20px solid royalblue;
+  margin-left: -10%;
+}
+
+.rock-comp-game{
+  cursor: pointer;
+  border: 20px solid #ca3433;
+  margin-left: -10%;
+}
+
+.scissor-comp-game{
+  cursor: pointer;
+  border: 20px solid #fcd12a;
+  margin-left: -10%;
+}
+
+.game-page div>img, .user-sel div>img, .computer-sel div>img{
+  margin: 17%;
+  height: 60%;
+  width: 60%;
+}
+
+.hidden{
+  display: none;
+}
+
+.game-container{
+  position: absolute;
+  width: 70%;
+  margin-left: 15%;
+  top: 180px;
+  bottom: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.computer-sel, .user-sel{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.user-sel h3, .computer-sel h3{
+  font-size: 22px;
+  text-transform: uppercase;
+  color: whitesmoke;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.verdict button{
+  cursor: pointer;
+  margin-top: 20px;
+  height: 40px;
+  padding: 0px 50px;
+  background: whitesmoke;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: 'Oswald', sans-serif;
+}
+
+.verdict h2{
+  text-align: center;
+  font-size: 30px;
+  color: whitesmoke;
+}
+
+.rules{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.rules-main{
+  padding: 20px;
+  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  z-index: 3;
+  border: 1px transparent;
+  border-radius: 12px;
+}
+
+.rules-head{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.rules-head h2{
+  font-size: 30px;
+  color:rgb(39, 31, 31);
+}
+
+.rules-head img{
+  cursor: pointer;
+  margin-top: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+.rules-img{
+  margin-top: 20px;
+}
+
+.invisible{
+  visibility: hidden;
 }

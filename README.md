@@ -1,3 +1,19 @@
+![Design preview for the Rock, Paper, Scissors game](./src/images/desktop-preview.jpg)
+# Rock, Paper and Scissors Game using React.
+
+- Play Rock, Paper, Scissors against the computer
+- Maintain the state of the score after refreshing the browser
+
+### Rules
+
+If the player wins, they gain 1 point. If the computer wins, the player loses one point.
+
+#### Original
+
+- Paper beats Rock
+- Rock beats Scissors
+- Scissors beats Paper
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

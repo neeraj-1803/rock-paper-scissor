@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { Footer } from './components/Footer';
+import Game from './components/Game';
+import Header from './components/Header';
+import Main from './components/Main';
+import Rules from './components/Rules';
 
 function App() {
+  const [selected, setSelected] = useState([]);
+  const clickedOption = (e) => {
+    let val;
+    if(e.target.hasAttribute('alt')){
+        val = e.target.alt;
+    }else{
+        val = e.target.className;
+    }
+    const rand = Math.floor(Math.random()*3)+1;
+    setSelected([val, rand]);
+    console.log(selected);
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Main clickedOption={clickedOption}/>
+      {(selected !== "")? <Game selected={selected}/> : ''}
+      <Rules />
+      <Footer />
     </div>
   );
 }
