@@ -1,6 +1,6 @@
 ![Design preview for the Rock, Paper, Scissors game](./src/images/desktop-preview.jpg)
 # Rock, Paper and Scissors Game using React.
-
+[Click here to view the Live applicaiton](https://quirky-albattani-9b6c4a.netlify.app/)
 - Play Rock, Paper, Scissors against the computer
 - Maintain the state of the score after refreshing the browser
 
